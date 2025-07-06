@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piyush Songara | Digital Design Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1976d2;
+      --background: #f5f5f5;
+      --text: #333;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode {
+      --background: #121212;
+      --text: #f5f5f5;
+      --card-bg: #1e1e1e;
+      --shadow: rgba(255, 255, 255, 0.05);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: white;
+      color: var(--primary);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .actions {
+      margin-top: 1rem;
+    }
+
+    .actions button,
+    .actions a.download-btn {
+      background: white;
+      color: var(--primary);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      margin: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .actions button:hover,
+    .actions a.download-btn:hover {
+      background: #eee;
+    }
+
+    section {
+      background: var(--card-bg);
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--primary);
+      color: white;
+      margin-top: 2rem;
+      border-radius: 10px 10px 0 0;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Piyush Songara</h1>
+    <p>Advanced Digital Design Engineer | VLSI & ASIC Enthusiast</p>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <a href="Piyush_Resume.pdf" class="download-btn" download>Download Resume</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate digital design engineer with a strong academic foundation from IISc Bangalore
+      and IIITDM Jabalpur. My expertise spans RTL design, verification, ASIC/FPGA flows, and open-source EDA tools.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Key Projects</h2>
+    <ul>
+      <li><strong>Remote Lab Control & Monitoring:</strong> Verilog + Petalinux + HTML + JS on Zybo Z7-20 FPGA.</li>
+      <li><strong>Physical Design using OpenLane:</strong> RTL to GDS-II on Google-Skywater 130nm PDK.</li>
+      <li><strong>RISC CPU Design:</strong> Single, Multi-cycle, and Pipelined 16-bit architectures in Verilog/VHDL.</li>
+      <li><strong>Handwritten Digit Recognition ASIC:</strong> Inference engine implemented in Verilog using Cadence.</li>
+      <li><strong>Power Meter with Tiva MCU:</strong> Current/voltage ADCs and LED output.</li>
+      <li><strong>5G/6G Antenna Design:</strong> mmWave & THz patch antennas simulated with CST Studio.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><strong>HDLs:</strong> Verilog, VHDL</p>
+    <p><strong>Languages:</strong> C, HTML</p>
+    <p><strong>Tools:</strong> Vivado, Cadence, Magic, OpenSTA, Yosys, LTspice</p>
+    <p><strong>Platforms:</strong> ARM Cortex M4, ZYBO Z7-20 FPGA</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>IISc Bangalore:</strong> M.Tech in Electronic System Engineering (CGPA: 9.3)</li>
+      <li><strong>IIITDM Jabalpur:</strong> B.Tech in Electronics & Communication (CGPA: 8.6)</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:piyush.songara2013@gmail.com">piyush.songara2013@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/psongara09" target="_blank">psongara09</a></p>
+    <p>GitHub: <a href="https://github.com/psongara0910" target="_blank">psongara0910</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Piyush Songara | Designed with ❤️</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
