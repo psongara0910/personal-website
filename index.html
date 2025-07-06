@@ -1481,54 +1481,9 @@
         // Download resume functionality
         const downloadBtn = document.getElementById('downloadBtn');
         downloadBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Create a simple PDF-like document
-            const resumeContent = `
-                PIYUSH SONGARA
-                Electronic Systems Engineer
-                
-                Email: piyushs@iisc.ac.in
-                Phone: +91-8560858472
-                LinkedIn: linkedin.com/in/psongara09
-                GitHub: github.com/psongara0910
-                
-                EDUCATION
-                • M.Tech in Electronic System Engineering
-                  Indian Institute of Science, Bangalore (CGPA: 9.3)
-                  Aug 2021 - Present
-                  
-                • B.Tech in Electronics & Communication
-                  IIITDM Jabalpur (CGPA: 8.6)
-                  Aug 2017 - June 2021
-                
-                SKILLS
-                • Hardware Description Languages: Verilog, VHDL
-                • Programming Languages: C, HTML
-                • CAD Tools: Xilinx Vivado, MATLAB, Cadence Tools
-                • Hardware Platforms: ARM Cortex M4, FPGA (Zybo Z7-20)
-                
-                MAJOR PROJECTS
-                • Remote Lab Control & Monitoring Platform
-                • RISC-V CPU Design with OpenLane
-                • Handwritten Digit Recognition ASIC
-                • 5G/6G Antenna Design
-                • 16-bit RISC CPU Pipeline
-                
-                ACHIEVEMENTS
-                • Topped NPTEL Principles of Communication (97%)
-                • Teaching Assistant at IISc Bangalore
-                • Multiple leadership roles in college
-            `;
-            
-            const blob = new Blob([resumeContent], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Piyush_Songara_Resume.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+            e.preventDefault(); // Prevent default navigation behavior
+            // Trigger download of the PDF file hosted in the same directory
+            window.location.href = 'Piyush_Resume.pdf';
         });
 
         // Loading screen
